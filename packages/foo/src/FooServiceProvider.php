@@ -14,6 +14,8 @@ class FooServiceProvider extends IlluminateServiceProvider
             $this->registerCommands();
         }
 
+        \app()->bind(Foo\Dummy::class);
+
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'foo');
     }
 

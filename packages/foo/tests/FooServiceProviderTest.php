@@ -1,15 +1,17 @@
 <?php
 
-namespace LearnMonorepo\Tests;
-
+use LearnMonorepo\Foo\Dummy;
 use LearnMonorepo\FooServiceProvider;
-use PHPUnit\Framework\Attributes\Test;
+use Workbench\TestHelper;
 
-class FooServiceProviderTest extends TestCase
-{
-    #[Test]
-    public function it_should_be_true()
-    {
-        $this->assertTrue(\class_exists(FooServiceProvider::class));
-    }
-}
+use function Orchestra\Testbench\Pest\setUp;
+
+setUp(function ($super) {
+    TestHelper::useProviders(FooServiceProvider::class);
+
+    $super();
+});
+
+\it('should bound to dummy class', function () {
+    \expect($this->app->bound(Dummy::class))->toBeTrue();
+});

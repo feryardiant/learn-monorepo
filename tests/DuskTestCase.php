@@ -4,7 +4,7 @@ namespace LearnMonorepo\Tests;
 
 use Orchestra\Testbench\Concerns\WithWorkbench;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
 {
     use WithTestHelper;
     use WithWorkbench;

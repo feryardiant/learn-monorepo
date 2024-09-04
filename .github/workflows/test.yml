@@ -93,7 +93,7 @@ jobs:
         run: composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run tests
-        run: composer test -- --coverage
+        run: ./vendor/bin/pest --coverage
 
       - name: Generate reports for CodeClimate
         id: reports

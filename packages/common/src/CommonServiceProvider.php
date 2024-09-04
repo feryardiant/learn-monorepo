@@ -22,6 +22,8 @@ class CommonServiceProvider extends IlluminateServiceProvider
         if (! app()->configurationIsCached()) {
             $this->mergeConfigFrom(__DIR__.'/../config.php', 'common');
         }
+
+        \app()->bind(Common\Dummy::class);
     }
 
     protected function registerPublishables()
