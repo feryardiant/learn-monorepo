@@ -1,0 +1,27 @@
+api:
+  - changed-files:
+      - any-glob-to-any-file: ['packages/*/src/**.php', 'packages/*/*.php']
+
+database:
+  - changed-files:
+      - any-glob-to-any-file: ['packages/*/database/**.php']
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: [.env.example, '**.md']
+
+enhancement:
+  - changed-files:
+      - any-glob-to-any-file: '**'
+
+integration:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/*.yml', 'packages/*/.github/**', '**/tests/**Test.php']
+
+localization:
+  - changed-files:
+      - any-glob-to-any-file: ['packages/*/lang/**']
+
+ui/ux:
+  - changed-files:
+      - any-glob-to-any-file: ['packages/*/views/**']
