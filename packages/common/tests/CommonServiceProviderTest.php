@@ -11,5 +11,5 @@ afterApplicationCreated(function () {
 });
 
 \it('should bound to dummy class', function () {
-    \expect($this->app->bound(Dummy::class))->toBeTrue();
+    \expect(app()->bound(Dummy::class))->toBeTrue();
 });
