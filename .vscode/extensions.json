@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "amiralizadeh9480.laravel-extra-intellisense",
+    "csstools.postcss",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "github.vscode-pull-request-github",
+    "lokalise.i18n-ally",
+    "mikestead.dotenv",
+    "onecentlin.laravel-blade",
+    "usernamehw.errorlens",
+    "xdebug.php-debug"
+  ]
+}
