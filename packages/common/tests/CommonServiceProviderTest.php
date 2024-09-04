@@ -4,12 +4,10 @@ use LearnMonorepo\Common\Dummy;
 use LearnMonorepo\CommonServiceProvider;
 use Workbench\TestHelper;
 
-use function Orchestra\Testbench\Pest\setUp;
+use function Orchestra\Testbench\Pest\afterApplicationCreated;
 
-setUp(function ($super) {
+afterApplicationCreated(function () {
     TestHelper::useProviders(CommonServiceProvider::class);
-
-    $super();
 });
 
 \it('should bound to dummy class', function () {

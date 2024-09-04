@@ -11,5 +11,13 @@
 |
 */
 
+use Workbench\TestHelper;
+
+use function Orchestra\Testbench\Pest\beforeApplicationDestroyed;
+
 \uses(LearnMonorepo\Tests\DuskTestCase::class)->in('Browser', '../packages/*/tests/Browser');
 \uses(LearnMonorepo\Tests\TestCase::class)->in('Feature', 'Unit', '../packages/*/tests');
+
+beforeApplicationDestroyed(function () {
+    TestHelper::clearProviders();
+});
