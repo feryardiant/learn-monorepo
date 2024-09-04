@@ -65,7 +65,7 @@
     "laravel/pint": "^1.1",
     "nunomaduro/collision": "^7.10|^8.4",
     "orchestra/testbench": "^8.20|^9.4",
-    "orchestra/testbench-dusk": "^9.7"
+    "orchestra/testbench-dusk": "^8.20|^9.7"
   },
   "config": {
     "preferred-install": "dist",
