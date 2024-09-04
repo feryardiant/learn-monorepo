@@ -1,0 +1,13 @@
+{
+  "name": "@feryardiant/learn-monorepo-foo",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feryardiant/learn-monorepo.git",
+    "directory": "packages/foo"
+  }
+}

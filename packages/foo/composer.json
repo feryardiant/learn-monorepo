@@ -1,0 +1,43 @@
+{
+  "name": "feryardiant/learn-monorepo-foo",
+  "description": "Dummy package to learn monorepo, DO NOT USE!",
+  "keywords": ["laravel", "package"],
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Fery Wardiyanto",
+      "email": "ferywardiyanto@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/feryardiant/learn-monorepo/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "LearnMonorepo\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LearnMonorepo\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "laravel/framework": "^10.0|^11.0",
+    "feryardiant/learn-monorepo-common": "dev-main"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LearnMonorepo\\FooServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

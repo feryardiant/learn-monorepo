@@ -1,0 +1,42 @@
+{
+  "name": "@/root",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.5.0",
+  "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
+  "repository": "github:feryardiant/learn-monorepo",
+  "scripts": {
+    "postinstall": "simple-git-hooks",
+    "release": "standard-version -s"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.0.0",
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "lint-staged": "^15.2.10",
+    "simple-git-hooks": "^2.11.0",
+    "standard-version": "^9.5.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "simple-git-hooks": {
+    "commit-msg": "pnpm exec commitlint --edit $1",
+    "pre-commit": "pnpm exec lint-staged --allow-empty"
+  },
+  "lint-staged": {
+    "{packages,tests,workbench}/**/*.php": [
+      "php vendor/bin/pint"
+    ],
+    "**/*.{js,json,ts,tsx,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "standard-version": {},
+  "workspaces": [
+    "./packages/*"
+  ]
+}
