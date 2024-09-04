@@ -27,7 +27,7 @@
     ],
     "test": [
       "Composer\\Config::disableProcessTimeout",
-      "@php vendor/bin/testbench package:test --ansi"
+      "@php vendor/bin/pest --coverage"
     ],
     "testbench": [
       "@php vendor/bin/testbench"
@@ -48,12 +48,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "LearnMonorepo\\Tests\\": [
-        "packages/common/tests",
-        "packages/foo/tests",
-        "packages/bar/tests",
-        "tests"
-      ],
+      "LearnMonorepo\\Tests\\": "tests",
       "Workbench\\": "workbench"
     }
   },
@@ -64,12 +59,17 @@
     "larastan/larastan": "^2.9",
     "laravel/pint": "^1.1",
     "nunomaduro/collision": "^7.10|^8.4",
+    "orchestra/pest-plugin-testbench": "^2.0",
     "orchestra/testbench": "^8.20|^9.4",
-    "orchestra/testbench-dusk": "^8.20|^9.7"
+    "orchestra/testbench-dusk": "^8.20|^9.7",
+    "pestphp/pest": "^2.35"
   },
   "config": {
     "preferred-install": "dist",
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true

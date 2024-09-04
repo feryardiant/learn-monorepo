@@ -22,6 +22,8 @@ class BarServiceProvider extends IlluminateServiceProvider
         if (! app()->configurationIsCached()) {
             $this->mergeConfigFrom(__DIR__.'/../config.php', 'bar');
         }
+
+        \app()->bind(Bar\Dummy::class);
     }
 
     protected function registerPublishables()
