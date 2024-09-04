@@ -1,0 +1,11 @@
+# Enforce Unix newlines
+* text=lf
+
+# Exclude unused files
+.gitattributes      export-ignore
+.gitkeep            export-ignore
+.github             export-ignore
+CHANGELOG.md        export-ignore
+composer.lock       export-ignore
+package.json        export-ignore
+tests               export-ignore
