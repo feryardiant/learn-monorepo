@@ -40,6 +40,7 @@
   "autoload": {
     "psr-4": {
       "LearnMonorepo\\": [
+        "packages/common/src",
         "packages/foo/src",
         "packages/bar/src"
       ]
@@ -48,6 +49,9 @@
   "autoload-dev": {
     "psr-4": {
       "LearnMonorepo\\Tests\\": [
+        "packages/common/tests",
+        "packages/foo/tests",
+        "packages/bar/tests",
         "tests"
       ],
       "Workbench\\": "workbench"
