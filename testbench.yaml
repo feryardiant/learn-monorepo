@@ -1,0 +1,8 @@
+providers:
+  - Workbench\Providers\WorkbenchServiceProvider
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+workbench:
+  install: true

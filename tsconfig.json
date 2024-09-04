@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "jsx": "preserve",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types"],
+    "allowJs": true,
+    "strict": true,
+    "declaration": true,
+    "noEmit": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.json"
+  ],
+  "exclude": [
+    "**/*.old/**",
+    "**/.turbo/**",
+    "**/dist/**",
+    "**/dev-dist/**",
+    "**/node_modules/**",
+    "**/public/**"
+  ]
+}
