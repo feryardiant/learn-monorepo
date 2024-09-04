@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/feryardiant/learn-monorepo-php?style=flat-square)](https://github.com/feryardiant/learn-monorepo-php/blob/main/LICENSE)
 [![Actions Status](https://img.shields.io/github/actions/workflow/status/feryardiant/learn-monorepo-php/test.yml?branch=main&style=flat-square)](https://github.com/feryardiant/learn-monorepo-php/actions)
 
-# Learning a Monorepo for PHP
+# Learning a Monorepo
 
 **WIP**
 
