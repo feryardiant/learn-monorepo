@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/feryardiant/learn-monorepo/compare/v0.0.4...v0.0.5) (2024-09-05)
+
+
+### Features
+
+* add more release categories based on certain labels ([dd14cbe](https://github.com/feryardiant/learn-monorepo/commit/dd14cbef1a65353daafb9f0ab9ef7b3260f12e83))
+* add more release categories based on certain labels [#11](https://github.com/feryardiant/learn-monorepo/issues/11) ([336bcdc](https://github.com/feryardiant/learn-monorepo/commit/336bcdcc8f0539320487c045d3a2380e3ec5b7a6))
+
 ### [0.0.4](https://github.com/feryardiant/learn-monorepo/compare/v0.0.3...v0.0.4) (2024-09-05)
 
 
