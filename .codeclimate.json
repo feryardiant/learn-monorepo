@@ -1,0 +1,11 @@
+{
+  "version": "2",
+  "checks": {
+    "similar-code": {
+      "enabled": false
+    }
+  },
+  "ratings": {
+    "paths": ["packages/**/**.php"]
+  }
+}
