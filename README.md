@@ -1,5 +1,7 @@
 [![License](https://img.shields.io/github/license/feryardiant/learn-monorepo?style=flat-square)](https://github.com/feryardiant/learn-monorepo/blob/main/LICENSE)
 [![Actions Status](https://img.shields.io/github/actions/workflow/status/feryardiant/learn-monorepo/test.yml?branch=main&style=flat-square)](https://github.com/feryardiant/learn-monorepo/actions)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/feryardiant/learn-monorepo)](https://codeclimate.com/github/feryardiant/learn-monorepo)
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/feryardiant/learn-monorepo)](https://codeclimate.com/github/feryardiant/learn-monorepo)
 
 # Learning a Monorepo
 
