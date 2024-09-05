@@ -108,7 +108,7 @@ jobs:
 
       - name: Upload tests reports to Codecov
         uses: codecov/test-results-action@v1
-        if: ${{ github.actor != 'dependabot[bot]' && needs.configs.outputs.should-reports == '1' }}
+        if: ${{ github.actor != 'dependabot[bot]' || needs.configs.outputs.should-reports == '1' }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: tests/reports/junit.xml
