@@ -1,27 +1,41 @@
 api:
   - changed-files:
-      - any-glob-to-any-file: ['packages/*/src/**.php', 'packages/*/*.php']
+      - any-glob-to-any-file: ["packages/*/src/**.php", "packages/*/*.php"]
 
 database:
   - changed-files:
-      - any-glob-to-any-file: ['packages/*/database/**.php']
+      - any-glob-to-any-file: ["packages/*/database/**.php"]
 
 documentation:
   - changed-files:
-      - any-glob-to-any-file: [.env.example, '**.md']
+      - any-glob-to-any-file: [.env.example, "**.md"]
 
 enhancement:
   - changed-files:
-      - any-glob-to-any-file: '**'
+      - any-glob-to-any-file: "**"
+
+experimental:
+  - head-branch: ["^test", "test"]
+
+features:
+  - head-branch: ["^feat", "feat"]
+
+fixes:
+  - head-branch: ["^fix", "fix"]
 
 integration:
   - changed-files:
-      - any-glob-to-any-file: ['.github/workflows/*.yml', 'packages/*/.github/**', '**/tests/**Test.php']
+      - any-glob-to-any-file:
+          - ".github/**.yml"
+          - "packages/*/.github/**"
+          - "scripts/**"
+          - "workbench/**"
+          - "**/tests/**Test.php"
 
 localization:
   - changed-files:
-      - any-glob-to-any-file: ['packages/*/lang/**']
+      - any-glob-to-any-file: ["packages/*/lang/**"]
 
 ui/ux:
   - changed-files:
-      - any-glob-to-any-file: ['packages/*/views/**']
+      - any-glob-to-any-file: ["packages/*/views/**"]
