@@ -39,7 +39,7 @@ for pkg in foo bar common; do
     git subtree -q split --prefix packages/$pkg --branch packages/$pkg
 
     # Push the sub-package specific branch to its remote
-    git push packages/$pkg packages/$pkg:main
+    git push packages/$pkg packages/$pkg:main --follow-tags
 
     # Clean up temporary remote and branch
     git branch -q -D packages/$pkg && git remote remove packages/$pkg
