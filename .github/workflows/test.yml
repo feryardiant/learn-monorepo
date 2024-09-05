@@ -149,5 +149,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Prepare environment
+        env:
+          SSH_RSAKEY: ${{ secrets.SSH_RSAKEY }}
+        run: |
+          [[ ! -d $HOME/.ssh ]] && mkdir $HOME/.ssh
+          echo "$SSH_RSAKEY" >> $HOME/.ssh/id_rsa
+          chmod 600 $HOME/.ssh/*
+
       - name: Split the packages
         run: scripts/split.sh
