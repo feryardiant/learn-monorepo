@@ -6,6 +6,18 @@ changelog:
       - dependabot[bot]
 
   categories:
-    - title: Contributions
+    - title: 🐞 Bug Fixes
       labels:
-        - '*'
+        - fixes
+    - title: ⚠️ Breaking Changes
+      labels:
+        - breaking
+    - title: 🚀 Features
+      labels:
+        - features
+    - title: 🚧 Experimental
+      labels:
+        - experimental
+    - title: 📝 Notable Changes
+      labels:
+        - "*"
