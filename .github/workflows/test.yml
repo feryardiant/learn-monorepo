@@ -106,7 +106,14 @@ jobs:
           ./cc-test-reporter format-coverage -t clover -o $CODECLIMATE_REPORT $COVERAGE_FILE
           echo "has-reports=1" >> $GITHUB_OUTPUT
 
-      - name: Upload tests reports
+      - name: Upload tests reports to Codecov
+        uses: codecov/test-results-action@v1
+        if: ${{ github.actor != 'dependabot[bot]' && needs.configs.outputs.should-reports == '1' }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: tests/reports/junit.xml
+
+      - name: Upload tests reports artifact
         uses: actions/upload-artifact@v4
         if: ${{ github.actor != 'dependabot[bot]' && steps.reports.outputs.has-reports == '1' }}
         with:
