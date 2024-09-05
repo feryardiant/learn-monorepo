@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/feryardiant/learn-monorepo/compare/v0.0.1...v0.0.2) (2024-09-05)
+
+
+### Features
+
+* init `changelogithub` to publish releases on github ([bfebb2f](https://github.com/feryardiant/learn-monorepo/commit/bfebb2f863ed451dc3879372cc08c248387f9224))
+
+
+### Bug Fixes
+
+* add appropriate permission to publish a release ([28349b5](https://github.com/feryardiant/learn-monorepo/commit/28349b59f3506ffc9f9340819884cfae74970850))
+
 ### 0.0.1 (2024-09-05)
 
 

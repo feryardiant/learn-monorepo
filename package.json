@@ -1,7 +1,7 @@
 {
   "name": "@/root",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "packageManager": "pnpm@9.5.0",
   "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
