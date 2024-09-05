@@ -6,6 +6,15 @@ database:
   - changed-files:
       - any-glob-to-any-file: ["packages/*/database/**.php"]
 
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "composer.json"
+          - "package.json"
+          - "pnpm-lock.yaml"
+          - "packages/*/composer.json"
+          - "packages/*/package.json"
+
 documentation:
   - changed-files:
       - any-glob-to-any-file: [.env.example, "**.md"]
