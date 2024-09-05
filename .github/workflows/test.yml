@@ -140,7 +140,7 @@ jobs:
 
   splits:
     name: Split and push the sub-packages
-    if: ${{ success() && github.actor != 'dependabot[bot]' }}
+    if: ${{ success() && github.ref_name == 'main' && github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     needs: tests
     steps:
