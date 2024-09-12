@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/feryardiant/learn-monorepo/compare/v0.0.5...v0.0.6) (2024-09-12)
+
+
+### Features
+
+* add release automation on each sub-package ([130ea27](https://github.com/feryardiant/learn-monorepo/commit/130ea2712b63c41589f7e4fad3a6db5ef592fdae))
+* bump dependencies and configure \`dependencies\` label assignment ([#13](https://github.com/feryardiant/learn-monorepo/issues/13)) ([aab70d9](https://github.com/feryardiant/learn-monorepo/commit/aab70d9e14eeacf58f00908bdfbe1ebc709e5714))
+* release sub packages ([#14](https://github.com/feryardiant/learn-monorepo/issues/14)) ([8ffc5c1](https://github.com/feryardiant/learn-monorepo/commit/8ffc5c191f53b180ab176cd7ee3ea0375307379f))
+* switch back to `changeloggithub` reverting 811857d ([a2a5f43](https://github.com/feryardiant/learn-monorepo/commit/a2a5f4328e5938ea01036501b7593f6f3e665129))
+
 ### [0.0.5](https://github.com/feryardiant/learn-monorepo/compare/v0.0.4...v0.0.5) (2024-09-05)
 
 
