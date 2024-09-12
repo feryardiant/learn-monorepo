@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      pull-requests: read
       contents: write
 
     steps:
@@ -20,23 +19,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: lts/*
-
-      # - name: Publish release
-      #   run: npx changelogithub
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Read Changelog file
-      #   run: npx @feryardiant/read-changelog > PUBLISH.md
-
-      - name: Publish
-        uses: softprops/action-gh-release@v2
+      - name: Publish release
+        run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # body_path: PUBLISH.md
-          generate_release_notes: true
+
