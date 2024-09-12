@@ -37,7 +37,11 @@
       "eslint --fix"
     ]
   },
-  "standard-version": {},
+  "standard-version": {
+    "scripts": {
+      "posttag": "sh scripts/release.sh"
+    }
+  },
   "workspaces": [
     "./packages/*"
   ]
