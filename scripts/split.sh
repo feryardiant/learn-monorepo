@@ -29,7 +29,7 @@ if [[ `git rev-parse HEAD` != `git rev-parse origin/$CURRENT_BRANCH` ]]; then
     exit 1
 fi
 
-for pkg in foo bar common; do
+for pkg in `ls packages`; do
     echo "Publishing $pkg package"
 
     # Create temporary remote for the sub-package
