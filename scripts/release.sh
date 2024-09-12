@@ -33,7 +33,7 @@ fi
 for pkg in `ls packages`; do
     echo "Releasing $pkg package"
 
-    tmp_path="/tmp/monorepo-$pkg"
+    tmp_path="/tmp/monorepo/$pkg"
 
     # Create temporary remote for the sub-package
     git clone git@github.com:feryardiant/learn-monorepo-$pkg.git $tmp_path
@@ -48,6 +48,8 @@ for pkg in `ls packages`; do
 
     # Back to main repo directory
     cd -
+
+    rm -rf $tmp_path
 
     echo ""
 done
