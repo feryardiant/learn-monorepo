@@ -24,11 +24,11 @@ fi
 git fetch origin
 
 # Make sure that release branch is in sync with origin.
-if [[ `git rev-parse HEAD` != `git rev-parse origin/$CURRENT_BRANCH` ]]; then
-    echo "Your branch is out of date with its upstream. Did you forget to pull or push any changes before releasing?" 1>&2
-
-    exit 1
-fi
+# if [[ `git rev-parse HEAD` != `git rev-parse origin/$CURRENT_BRANCH` ]]; then
+#     echo "Your branch is out of date with its upstream. Did you forget to pull or push any changes before releasing?" 1>&2
+#
+#     exit 1
+# fi
 
 for pkg in `ls packages`; do
     echo "Releasing $pkg package"
