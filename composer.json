@@ -40,11 +40,11 @@
     },
     "autoload": {
         "psr-4": {
-          "LearnMonorepo\\": [
-            "packages/common/src",
-            "packages/foo/src",
-            "packages/bar/src"
-          ]
+            "LearnMonorepo\\": [
+                "packages/common/src",
+                "packages/foo/src",
+                "packages/bar/src"
+            ]
         }
     },
     "autoload-dev": {
