@@ -38,15 +38,6 @@
             "@php vendor/bin/testbench tinker"
         ]
     },
-    "autoload": {
-        "psr-4": {
-            "LearnMonorepo\\": [
-                "packages/common/src",
-                "packages/foo/src",
-                "packages/bar/src"
-            ]
-        }
-    },
     "autoload-dev": {
         "psr-4": {
             "LearnMonorepo\\Tests\\": "tests",
@@ -54,17 +45,20 @@
         }
     },
     "require": {
-        "php": ">=8.3",
-        "laravel/framework": "^v13.37"
+        "php": ">=8.3"
     },
     "require-dev": {
         "larastan/larastan": "^3.13",
         "laravel/pint": "^1.32",
-        "nunomaduro/collision": "^8.9",
         "orchestra/pest-plugin-testbench": "^4.1",
         "orchestra/testbench": "^11.3",
         "pestphp/pest": "^4.7",
-        "symplify/monorepo-builder": "^12.0"
+        "wikimedia/composer-merge-plugin": "^2.1"
+    },
+    "replace": {
+        "feryardiant/learn-monorepo-bar": "self.version",
+        "feryardiant/learn-monorepo-common": "self.version",
+        "feryardiant/learn-monorepo-foo": "self.version"
     },
     "config": {
         "allow-plugins": {
@@ -75,18 +69,10 @@
         "sort-packages": true
     },
     "extra": {
-        "laravel": {
-            "providers": [
-                "LearnMonorepo\\BarServiceProvider",
-                "LearnMonorepo\\CommonServiceProvider",
-                "LearnMonorepo\\FooServiceProvider"
-            ]
+        "merge-plugin": {
+            "include": ["packages/*/composer.json"],
+            "recurse": false
         }
-    },
-    "replace": {
-        "feryardiant/learn-monorepo-bar": "self.version",
-        "feryardiant/learn-monorepo-common": "self.version",
-        "feryardiant/learn-monorepo-foo": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
