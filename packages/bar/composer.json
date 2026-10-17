@@ -19,8 +19,9 @@
     }
   },
   "require": {
-    "laravel/framework": "^10.0|^11.0",
-    "feryardiant/learn-monorepo-common": "dev-main"
+    "php": ">=8.3",
+    "laravel/framework": "^v13.37",
+    "feryardiant/learn-monorepo-common": "self.version"
   },
   "config": {
     "preferred-install": "dist",

@@ -11,13 +11,11 @@
 |
 */
 
-use LearnMonorepo\Tests\DuskTestCase;
 use LearnMonorepo\Tests\TestCase;
 use Workbench\TestHelper;
 
 use function Orchestra\Testbench\Pest\beforeApplicationDestroyed;
 
-\uses(DuskTestCase::class)->in('Browser', '../packages/*/tests/Browser');
 \uses(TestCase::class)->in('Feature', 'Unit', '../packages/*/tests');
 
 beforeApplicationDestroyed(function () {

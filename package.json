@@ -1,43 +1,43 @@
 {
-  "type": "module",
-  "version": "0.0.6",
-  "private": true,
-  "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
-  "repository": "github:feryardiant/learn-monorepo",
-  "scripts": {
-    "prepare": "simple-git-hooks",
-    "release": "commit-and-tag-version -s"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^21.2.3",
-    "@commitlint/config-conventional": "^21.2.3",
-    "commit-and-tag-version": "^13.2.1",
-    "lint-staged": "^17.6.0",
-    "simple-git-hooks": "2.14.0"
-  },
-  "allowScripts": {
-    "simple-git-hooks@2.14.0": true
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "simple-git-hooks": {
-    "commit-msg": "npx commitlint --edit $1",
-    "pre-commit": "npx lint-staged --allow-empty"
-  },
-  "lint-staged": {
-    "{packages,tests,workbench}/**/*.php": [
-      "vendor/bin/pint"
-    ]
-  },
-  "standard-version": {
+    "type": "module",
+    "version": "0.0.6",
+    "private": true,
+    "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
+    "repository": "github:feryardiant/learn-monorepo",
     "scripts": {
-      "posttag": "sh scripts/release.sh"
-    }
-  },
-  "workspaces": [
-    "./packages/*"
-  ]
+        "prepare": "simple-git-hooks",
+        "release": "commit-and-tag-version -s"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^21.2.3",
+        "@commitlint/config-conventional": "^21.2.3",
+        "commit-and-tag-version": "^13.2.1",
+        "lint-staged": "^17.6.0",
+        "simple-git-hooks": "2.14.0"
+    },
+    "allowScripts": {
+        "simple-git-hooks@2.14.0": true
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "simple-git-hooks": {
+        "commit-msg": "npx commitlint --edit $1",
+        "pre-commit": "npx lint-staged --allow-empty"
+    },
+    "lint-staged": {
+        "{packages,tests,workbench}/**/*.php": [
+            "vendor/bin/pint"
+        ]
+    },
+    "standard-version": {
+        "scripts": {
+            "posttag": "sh scripts/release.sh"
+        }
+    },
+    "workspaces": [
+        "./packages/*"
+    ]
 }
