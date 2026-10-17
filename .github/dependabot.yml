@@ -8,21 +8,25 @@ updates:
       timezone: Asia/Jakarta
 
   - package-ecosystem: composer
-    directory: /
+    directories:
+      - /
+      - /packages/*/
     schedule:
-      interval: monthly
+      interval: weekly
       timezone: Asia/Jakarta
-    versioning-strategy: lockfile-only
+    versioning-strategy: increase-if-necessary
     groups:
       dependencies:
         patterns: ['*']
 
   - package-ecosystem: npm
-    directory: /
+    directories:
+      - /
+      - /packages/*/
     schedule:
       interval: monthly
       timezone: Asia/Jakarta
-    versioning-strategy: lockfile-only
+    versioning-strategy: increase-if-necessary
     groups:
       dependencies:
         patterns: ['*']
