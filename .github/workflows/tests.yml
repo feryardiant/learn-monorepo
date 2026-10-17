@@ -90,23 +90,44 @@ jobs:
         run: vendor/bin/pest --coverage
 
   splits:
-    name: Split and push the sub-packages
+    name: Split packages
     if: ${{ success() && github.ref_name == 'main' && github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     needs: tests
+    permissions:
+      contents: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [common, foo, bar]
+
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Prepare environment
+      - name: Monorepo Split of ${{ matrix.package }}
+        uses: danharrin/monorepo-split-github-action@14e42e2437f674b8987c1f50ca3689116aea1893 # v2.4.5
         env:
-          SSH_RSAKEY: ${{ secrets.SSH_RSAKEY }}
-        run: |
-          [[ ! -d $HOME/.ssh ]] && mkdir $HOME/.ssh
-          echo "$SSH_RSAKEY" >> $HOME/.ssh/id_rsa
-          chmod 600 $HOME/.ssh/*
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          package_directory: packages/${{ matrix.package }}
+          repository_organization: ${{ github.actor }}
+          repository_name: learn-monorepo-${{ matrix.package }}
+          branch: ${{ github.ref_name }}
+          user_name: ${{ github.actor }}
+          user_email: ferywardiyanto@gmail.com
 
-      - name: Split the packages
-        run: scripts/split.sh
+      # - name: Prepare environment
+      #   env:
+      #     SSH_RSAKEY: ${{ secrets.SSH_RSAKEY }}
+      #   run: |
+      #     [[ ! -d $HOME/.ssh ]] && mkdir $HOME/.ssh
+      #     echo "$SSH_RSAKEY" >> $HOME/.ssh/id_rsa
+      #     chmod 600 $HOME/.ssh/*
+
+      # - name: Split the packages
+      #   run: scripts/split.sh
