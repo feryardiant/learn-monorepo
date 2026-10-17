@@ -1,48 +1,43 @@
 {
-  "name": "@/root",
-  "type": "module",
-  "version": "0.0.6",
-  "private": true,
-  "packageManager": "pnpm@9.5.0",
-  "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
-  "repository": "github:feryardiant/learn-monorepo",
-  "scripts": {
-    "postinstall": "simple-git-hooks",
-    "release": "standard-version -s"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^3.12.0",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@types/node": "^20.17.10",
-    "eslint": "^9.17.0",
-    "lint-staged": "^15.2.11",
-    "simple-git-hooks": "^2.11.1",
-    "standard-version": "^9.5.0"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "simple-git-hooks": {
-    "commit-msg": "pnpm exec commitlint --edit $1",
-    "pre-commit": "pnpm exec lint-staged --allow-empty"
-  },
-  "lint-staged": {
-    "{packages,tests,workbench}/**/*.php": [
-      "php vendor/bin/pint"
-    ],
-    "**/*.{js,json,ts,tsx,vue}": [
-      "eslint --fix"
-    ]
-  },
-  "standard-version": {
+    "type": "module",
+    "version": "0.0.6",
+    "private": true,
+    "author": "Fery Wardiyanto <ferywardiyanto@gmail.com>",
+    "repository": "github:feryardiant/learn-monorepo",
     "scripts": {
-      "posttag": "sh scripts/release.sh"
-    }
-  },
-  "workspaces": [
-    "./packages/*"
-  ]
+        "prepare": "simple-git-hooks",
+        "release": "commit-and-tag-version -s"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^21.2.3",
+        "@commitlint/config-conventional": "^21.2.3",
+        "commit-and-tag-version": "^13.2.1",
+        "lint-staged": "^17.6.0",
+        "simple-git-hooks": "2.14.0"
+    },
+    "allowScripts": {
+        "simple-git-hooks@2.14.0": true
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "simple-git-hooks": {
+        "commit-msg": "npx commitlint --edit $1",
+        "pre-commit": "npx lint-staged --allow-empty"
+    },
+    "lint-staged": {
+        "{packages,tests,workbench}/**/*.php": [
+            "vendor/bin/pint"
+        ]
+    },
+    "standard-version": {
+        "scripts": {
+            "posttag": "sh scripts/release.sh"
+        }
+    },
+    "workspaces": [
+        "./packages/*"
+    ]
 }

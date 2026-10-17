@@ -1,26 +1,13 @@
-name: Release
+name: Publish
+run-name: "publish(${{ github.ref_name }}): release for `${{ github.sha }}`"
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    tags: ['v*.*.*']
 
 jobs:
-  publish:
-    name: Publish Release
-    runs-on: ubuntu-latest
-
+  release:
+    name: Release
+    uses: projek-xyz/actions/.github/workflows/release.yml@06affdd342d5e9f747dfc9837e797688e7eb03db # main 2026-10-14
     permissions:
       contents: write
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Publish release
-        run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

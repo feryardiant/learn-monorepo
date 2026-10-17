@@ -1,76 +1,79 @@
 {
-  "name": "feryardiant/learn-monorepo",
-  "description": "Laravel Package Template",
-  "keywords": ["laravel", "package", "template"],
-  "license": "MIT",
-  "type": "library",
-  "authors": [
-    {
-      "name": "Fery Wardiyanto",
-      "email": "ferywardiyanto@gmail.com"
-    }
-  ],
-  "support": {
-    "source": "https://github.com/feryardiant/learn-monorepo-php"
-  },
-  "scripts": {
-    "lint": [
-      "@php vendor/bin/pint",
-      "@php vendor/bin/phpstan analyse"
+    "name": "feryardiant/learn-monorepo",
+    "description": "Laravel Package Template",
+    "keywords": [
+        "laravel",
+        "package",
+        "template"
     ],
-    "post-update-cmd": [
-      "@php vendor/bin/dusk-updater detect --auto-update"
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fery Wardiyanto",
+            "email": "ferywardiyanto@gmail.com"
+        }
     ],
-    "serve": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php vendor/bin/testbench serve"
-    ],
-    "test": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php vendor/bin/pest --coverage"
-    ],
-    "testbench": [
-      "@php vendor/bin/testbench"
-    ],
-    "tinker": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php vendor/bin/testbench tinker"
-    ]
-  },
-  "autoload": {
-    "psr-4": {
-      "LearnMonorepo\\": [
-        "packages/common/src",
-        "packages/foo/src",
-        "packages/bar/src"
-      ]
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "LearnMonorepo\\Tests\\": "tests",
-      "Workbench\\": "workbench"
-    }
-  },
-  "require": {
-    "laravel/framework": "^10.0|^11.0"
-  },
-  "require-dev": {
-    "larastan/larastan": "^2.9",
-    "laravel/pint": "^1.1",
-    "nunomaduro/collision": "^7.10|^8.4",
-    "orchestra/pest-plugin-testbench": "^2.0",
-    "orchestra/testbench": "^8.20|^9.4",
-    "orchestra/testbench-dusk": "^8.20|^9.7",
-    "pestphp/pest": "^2.35"
-  },
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": true,
-    "allow-plugins": {
-      "pestphp/pest-plugin": true
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "support": {
+        "source": "https://github.com/feryardiant/learn-monorepo"
+    },
+    "scripts": {
+        "lint": [
+            "@php vendor/bin/pint",
+            "@php vendor/bin/phpstan analyse"
+        ],
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php vendor/bin/testbench serve"
+        ],
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php vendor/bin/pest --coverage"
+        ],
+        "testbench": [
+            "@php vendor/bin/testbench"
+        ],
+        "tinker": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php vendor/bin/testbench tinker"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LearnMonorepo\\Tests\\": "tests",
+            "Workbench\\": "workbench"
+        }
+    },
+    "require": {
+        "php": ">=8.3"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.13",
+        "laravel/pint": "^1.32",
+        "orchestra/pest-plugin-testbench": "^4.1",
+        "orchestra/testbench": "^11.3",
+        "pestphp/pest": "^4.7",
+        "wikimedia/composer-merge-plugin": "^2.1"
+    },
+    "replace": {
+        "feryardiant/learn-monorepo-bar": "self.version",
+        "feryardiant/learn-monorepo-common": "self.version",
+        "feryardiant/learn-monorepo-foo": "self.version"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "wikimedia/composer-merge-plugin": true
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "merge-plugin": {
+            "include": ["packages/*/composer.json"],
+            "recurse": false
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

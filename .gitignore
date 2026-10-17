@@ -2,25 +2,27 @@
 # --------------------------
 Thumbs.db
 Desktop.ini
-.directory
 .DS_Store
+.directory
 ._*
-*.cache
-*.crt
+*.DS_Store
+*.gz
 *.log
 *.old
-*.key
-*.pem
-*.tmp
 *.zip
+
+# Backup, Cache and Temporary
+.cache
 *~
+*.bak*
+*.bak
+*.cache
+*.swp
 
 # Development files
 # --------------------------
 .env.*
 .env
-.php-version
-.tool-versions
 coveralls-upload.json
 dist
 node_modules
@@ -28,7 +30,7 @@ vendor
 
 # Node.js lock files
 .pnpm-store
-package-lock.json
+pnpm-*.yaml
 yarn.lock
 
 # But Keep these
