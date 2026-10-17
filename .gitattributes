@@ -20,5 +20,5 @@ package-lock.json   export-ignore
 phpunit.*           export-ignore
 phpstan.*           export-ignore
 pint.*              export-ignore
-testbench.yaml.json export-ignore
+testbench.yaml      export-ignore
 tsconfig.json       export-ignore
