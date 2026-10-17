@@ -32,11 +32,7 @@
             "vendor/bin/pint"
         ]
     },
-    "standard-version": {
-        "scripts": {
-            "posttag": "sh scripts/release.sh"
-        }
-    },
+    "commit-and-tag-version": {},
     "workspaces": [
         "./packages/*"
     ]
